@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "server": "nodemon server.js"
+    "server": "npx nodemon server.js"
   },
   "author": "Aryan Gupta",
   "license": "ISC",
