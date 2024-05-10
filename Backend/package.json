@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "server": "nodemon server.js",
-    "build":"npm run build",
+    "build":"",
     "start": "node server.js"
   },
   "author": "Aryan Gupta",
