@@ -5,8 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "build":"server",
-    "start":"node server.js"
+    "server": "nodemon server.js",
+    "build":"server.js",
+    "start": "node server.js"
   },
   "author": "Aryan Gupta",
   "license": "ISC",
