@@ -6,8 +6,13 @@ import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+
 import path from "path";
 import { fileURLToPath } from "url";
+
+//Resolving dirname for ES Module.
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //App config.
 const app = express();
@@ -20,16 +25,20 @@ app.use(cors());
 //DB Connection
 connectDB();
 
-const _filename = fileURLToPath(import.meta.url);
-const _dirname = path.dirname(_filename);
-
 //Api Endpoints.
 app.use("/api/food", foodRouter);
 app.use("/images", express.static('uploads'));
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
-app.use(express.static(path.join(_dirname,"../Frontend/dist")))
+
+//Use the frontend app.
+app.use(express.static(path.join(__dirname,"/Frontend/dist")));
+
+//Render frontend for any path.
+app.use("*", (req,res) => {
+    res.sendFile(path.join(__dirname,"/Frontend/dist/index.html"));
+})
 
 app.get("/", (req,res) => {
     res.send("API Working");

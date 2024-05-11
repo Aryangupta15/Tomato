@@ -5,8 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "server": "node server.js",
-    "start": "node server.js"
+    "server": "nodemon server.js",
+    "build": "npm install --prefix ./Frontend && npm run build --prefix ./Frontend && npm install"
   },
   "author": "Aryan Gupta",
   "license": "ISC",
