@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router';
 
 export default function Cart() {
   
-  const {cartItems, food_list, removeFromCart, GetTotalCartAmount, url} = useContext(StoreContext);
+  const {cartItems, food_list, removeFromCart, GetTotalCartAmount, url, token} = useContext(StoreContext);
   const Navigate = useNavigate();
 
   return (
@@ -62,7 +62,15 @@ export default function Cart() {
                 <b>${GetTotalCartAmount() === 0 ? 0 : GetTotalCartAmount()+3}</b>
               </div>
             </div>
-            <button onClick={() => Navigate('/order')}>Proceed To Checkout</button>
+            <button onClick={() => {
+              if(!token){
+                alert("First login");
+                Navigate('/order');
+              }
+              else{
+                Navigate('/order');
+              }
+            }}>Proceed To Checkout</button>
           </div>
           <div className="cart-promocode">
             <div>
