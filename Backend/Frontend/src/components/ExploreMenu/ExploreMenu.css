@@ -34,7 +34,12 @@
     min-width: 80px;
     cursor: pointer;
     border-radius: 50%;
+    border: 0.5px solid tomato;
     transform: 0.5s;
+}
+
+#explore-menu .explore-menu-list img.active{
+    border: 5px solid tomato;
 }
 
 #explore-menu .explore-menu-list p{

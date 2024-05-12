@@ -18,13 +18,27 @@ const navbar = ({setShowLogin}) => {
     navigate("/");
   }
 
+  function handleClickMenu(){
+    const element = document.getElementById('food-display');
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  function handleClickApp(){
+    const element = document.getElementById('app-download');
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className='navbar'>
       <Link to='/'><div className="name">Tomato.</div></Link>
       <ul className='navbar-menu'>
         <Link to='/'><li>Home</li></Link>
-        <li>Menu</li>
-        <li>Mobile App</li>
+        <li onClick={() => handleClickMenu()}>Menu</li>
+        <li onClick={() => handleClickApp()}>Mobile App</li>
         <li>Contact Us</li>
       </ul>
 
