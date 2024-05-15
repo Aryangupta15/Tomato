@@ -5,6 +5,7 @@ import cart from '../../assets/cart.svg'
 import { Link, useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext'
 import { assets } from '../../Eassets/assets'
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, user } from "@nextui-org/react";
 
 const navbar = ({setShowLogin}) => {
 
@@ -49,14 +50,26 @@ const navbar = ({setShowLogin}) => {
             <div className={GetTotalCartAmount() === 0 ? "":"dot"}></div>
           </div>
           {!token ? <button className='button-33' onClick={() => setShowLogin(true)}>Sign In</button>
-            : <div className='navbar-profile'>
-              <img src={assets.profile_icon} alt="Profile Icon" />
-              <ul className='nav-profile-dropdown'>
-                <li onClick={() => navigate("/myorders")}><img src={assets.bag_icon} alt="" />Orders</li>
-                {/* <hr /> */}
-                <li onClick={Logout}><img src={assets.logout_icon} alt="" />Logout</li>
-              </ul>
-            </div>
+            : <div className="flex items-center gap-4">
+            <Dropdown placement="bottom-end">
+              <DropdownTrigger>
+                <Avatar
+                  isBordered
+                  as="button"
+                  className="transition-transform"
+                  src={assets.profile_icon}
+                />
+              </DropdownTrigger>
+              <DropdownMenu aria-label="Profile Actions" variant="flat">
+                <DropdownItem key="settings" color="danger" onClick={() => navigate("/myorders")}>
+                  My Orders
+                </DropdownItem>
+                <DropdownItem key="logout" color="danger" onClick={Logout}>
+                  Log Out
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>
           }
       </div>
     </div>

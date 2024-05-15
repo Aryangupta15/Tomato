@@ -4,11 +4,14 @@ import './index.css'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import StoreContextprovider from './Context/StoreContext'
+import {NextUIProvider} from "@nextui-org/react";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <StoreContextprovider>
-      <App/>
+      <NextUIProvider>
+        <App/>
+      </NextUIProvider>
     </StoreContextprovider>
   </BrowserRouter>,
 )
