@@ -61,10 +61,16 @@ const navbar = ({setShowLogin}) => {
                 />
               </DropdownTrigger>
               <DropdownMenu aria-label="Profile Actions" variant="flat">
-                <DropdownItem key="settings" color="danger" onClick={() => navigate("/myorders")}>
+                <DropdownItem color="primary" onClick={() => navigate("/cart")}>
+                  My Cart
+                </DropdownItem>
+                <DropdownItem color="primary" onClick={() => navigate("/myorders")}>
                   My Orders
                 </DropdownItem>
-                <DropdownItem key="logout" color="danger" onClick={Logout}>
+                <DropdownItem>
+                <Divider className="my-1"/>
+                </DropdownItem>
+                <DropdownItem color="danger" onClick={Logout}>
                   Log Out
                 </DropdownItem>
               </DropdownMenu>
