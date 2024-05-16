@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext'
 import { assets } from '../../Eassets/assets'
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, user } from "@nextui-org/react";
+import {Divider} from "@nextui-org/react";
 
 const navbar = ({setShowLogin}) => {
 
