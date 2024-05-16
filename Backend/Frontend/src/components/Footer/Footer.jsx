@@ -12,12 +12,17 @@ const Footer = () => {
                 <h1>Tomato.</h1>
             </div>
             <div className="right ft">
-                <div className="social">
-                    <img src={Instagram} className='logo' alt="" />
-                    <img src={Linkedin} className='logo' alt="" />
-                    <img src={Gmail} className='logo' alt="" />
-                </div>
-
+            <div className="social">
+                        <a href="https://www.instagram.com/aj_aryan09/" target="_blank" rel="noopener noreferrer">
+                            <img src={Instagram} className="logo" alt="Instagram" />
+                        </a>
+                        <a href="www.linkedin.com/in/aryan-gupta-01k" target="_blank" rel="noopener noreferrer">
+                            <img src={Linkedin} className="logo" alt="LinkedIn" />
+                        </a>
+                        <a href="mailto:aryangupta.x01@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <img src={Gmail} className="logo" alt="Gmail" />
+                        </a>
+                    </div>
             </div>
         </footer>
             <p>&copy;2024 Tomato. | All Rights Reserved</p>
